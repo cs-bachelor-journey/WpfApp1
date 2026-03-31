@@ -6,7 +6,82 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0,0,8,0"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style x:Key="InputTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style x:Key="InputComboBox" TargetType="ComboBox">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+    </Window.Resources>
     <Grid>
 
+    </Grid>
+    <Grid Margin="12,10,12,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="145"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Row 0: Nom -->
+        <Label Grid.Row="0" Grid.Column="0"
+               Content="Entrez votre nom :"
+               Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Row="0" Grid.Column="1"
+                 x:Name="TxtNom"
+                 Style="{StaticResource InputTextBox}"/>
+
+        <!-- Row 2: Fonction -->
+        <Label Grid.Row="2" Grid.Column="0"
+               Content="Entrez votre fonction :"
+               Style="{StaticResource LabelStyle}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1"
+                  x:Name="CmbFonction"
+                  Style="{StaticResource InputComboBox}"
+                  IsEditable="False">
+            <ComboBoxItem Content="Développeur"/>
+            <ComboBoxItem Content="Designer"/>
+            <ComboBoxItem Content="Chef de projet"/>
+            <ComboBoxItem Content="Analyste"/>
+            <ComboBoxItem Content="Administrateur"/>
+        </ComboBox>
+
+        <!-- Row 4: Status + Button -->
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <TextBlock x:Name="TxtStatus"
+                       VerticalAlignment="Center"
+                       Margin="0,0,12,0"
+                       FontStyle="Italic"
+                       Foreground="Gray"
+                       Text="..."/>
+            <Button x:Name="BtnBienvenue"
+                    Content="Bienvenue"
+                    Width="100"
+                    Height="26"
+                    Click="BtnBienvenue_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
