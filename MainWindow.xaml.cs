@@ -25,7 +25,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            CmbFonction.SelectedIndex = 0;
         }
         
 
@@ -33,9 +32,9 @@ namespace WpfApp1
        
         // ── Event handlers ───────────────────────────────────────────────────────
 
-        private void BtnBienvenue_Click(object sender, RoutedEventArgs e)
+        private void WelcomeAction(object sender, RoutedEventArgs e)
         {
-            
+            // source code
         }
     }
 }

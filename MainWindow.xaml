@@ -25,13 +25,13 @@
         <Label Grid.Row="0" Grid.Column="0"
                Content="Entrez votre nom :" />
         <TextBox Grid.Row="0" Grid.Column="1"
-                 x:Name="TxtNom"/>
+                 x:Name="personName"/>
 
         <!-- Row 2: Fonction -->
         <Label Grid.Row="2" Grid.Column="0"
                Content="Entrez votre fonction :" />
         <ComboBox Grid.Row="2" Grid.Column="1"
-                  x:Name="CmbFonction" 
+                  x:Name="personJob" 
                   IsEditable="False">
             <ComboBoxItem Content="Développeur"/>
             <ComboBoxItem Content="Designer"/>
@@ -44,17 +44,17 @@
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                     Orientation="Horizontal"
                     HorizontalAlignment="Right">
-            <TextBlock x:Name="TxtStatus"
+            <TextBlock x:Name="welcomeWords"
                        VerticalAlignment="Center"
                        Margin="0,0,12,0"
                        FontStyle="Italic"
                        Foreground="Gray"
                        Text="..."/>
-            <Button x:Name="BtnBienvenue"
+            <Button x:Name="welcome"
                     Content="Bienvenue"
                     Width="100"
                     Height="26"
-                    Click="BtnBienvenue_Click"/>
+                    Click="WelcomeAction"/>
         </StackPanel>
     </Grid>
 </Window>
