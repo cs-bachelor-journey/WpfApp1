@@ -34,14 +34,22 @@ namespace WpfApp1
 
         private void WelcomeAction(object sender, RoutedEventArgs e)
         {
-            string personNameValue = personName.Text;
+            // validation 
+            if (!string.IsNullOrEmpty(personName.Text) && personJob.SelectedValue != null)
+            {
+                string personNameValue = personName.Text;
 
-            ComboBoxItem comboBoxItem = (ComboBoxItem)personJob.SelectedValue;
-            string personJobValue = comboBoxItem.Content.ToString();
+                ComboBoxItem comboBoxItem = (ComboBoxItem)personJob.SelectedValue;
+                string personJobValue = comboBoxItem.Content.ToString();
 
-            string generatedSentence = $"Bienvenue {personNameValue} ({personJobValue})";
+                string generatedSentence = $"Bienvenue {personNameValue} ({personJobValue})";
 
-            welcomeWords.Text = generatedSentence;
+                welcomeWords.Text = generatedSentence;
+            }else
+            {
+                MessageBox.Show("Veuillex remplir tous les champs !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
     }
 }
