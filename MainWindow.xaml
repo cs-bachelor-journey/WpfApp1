@@ -48,12 +48,16 @@
                        VerticalAlignment="Center"
                        Margin="0,0,12,0"
                        FontStyle="Italic"
-                       Foreground="Gray"
+                       Foreground="Black"
                        Text="..."/>
             <Button x:Name="welcome"
                     Content="Bienvenue"
                     Width="100"
                     Height="26"
+                    Background="Blue"
+                    Foreground="Wheat"
+                    FontStyle="Oblique"
+                   
                     Click="WelcomeAction"/>
         </StackPanel>
     </Grid>

@@ -34,7 +34,14 @@ namespace WpfApp1
 
         private void WelcomeAction(object sender, RoutedEventArgs e)
         {
-            // source code
+            string personNameValue = personName.Text;
+
+            ComboBoxItem comboBoxItem = (ComboBoxItem)personJob.SelectedValue;
+            string personJobValue = comboBoxItem.Content.ToString();
+
+            string generatedSentence = $"Bienvenue {personNameValue} ({personJobValue})";
+
+            welcomeWords.Text = generatedSentence;
         }
     }
 }
