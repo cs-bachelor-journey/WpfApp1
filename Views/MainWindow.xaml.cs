@@ -23,16 +23,6 @@ namespace WpfApp1.Views
             InitializeComponent();
             DataContext = new ViewModels.MainViewModel();
         }
-        
-
-
-       
-        // ── Event handlers ───────────────────────────────────────────────────────
-
-        private void WelcomeAction(object sender, RoutedEventArgs e)
-        {
-            
-            
-        }
+      
     }
 }

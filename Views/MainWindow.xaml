@@ -48,7 +48,7 @@
                        Margin="0,0,12,0"
                        FontStyle="Italic"
                        Foreground="Black"
-                       Text="{Binding Greeting.Model, UpdateSourceTrigger=PropertyChanged}"/>
+                       Text="{Binding Greeting.Message, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="welcome"
                     Content="Bienvenue"
                     Width="100"
@@ -57,7 +57,7 @@
                     Foreground="Wheat"
                     FontStyle="Oblique"
                    
-                    Click="WelcomeAction"/>
+                    Command="{Binding GreetingCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
