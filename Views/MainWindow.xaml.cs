@@ -16,15 +16,12 @@ namespace WpfApp1.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        // ── Public properties ────────────────────────────────────────────────────
-
-        
 
         // ── Constructor ──────────────────────────────────────────────────────────
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModels.MainViewModel();
         }
         
 
@@ -34,21 +31,7 @@ namespace WpfApp1.Views
 
         private void WelcomeAction(object sender, RoutedEventArgs e)
         {
-            // validation 
-            if (!string.IsNullOrEmpty(personName.Text) && personJob.SelectedValue != null)
-            {
-                string personNameValue = personName.Text;
-
-                ComboBoxItem comboBoxItem = (ComboBoxItem)personJob.SelectedValue;
-                string personJobValue = comboBoxItem.Content.ToString();
-
-                string generatedSentence = $"Bienvenue {personNameValue} ({personJobValue})";
-
-                welcomeWords.Text = generatedSentence;
-            }else
-            {
-                MessageBox.Show("Veuillex remplir tous les champs !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            
             
         }
     }

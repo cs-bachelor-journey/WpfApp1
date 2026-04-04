@@ -26,20 +26,18 @@
         <Label Grid.Row="0" Grid.Column="0"
                Content="Entrez votre nom :" />
         <TextBox Grid.Row="0" Grid.Column="1"
-                 x:Name="personName"/>
+                 x:Name="personName"
+                 Text="{Binding Greeting.Name, UpdateSourceTrigger=PropertyChanged}"/>
 
         <!-- Row 2: Fonction -->
         <Label Grid.Row="2" Grid.Column="0"
                Content="Entrez votre fonction :" />
         <ComboBox Grid.Row="2" Grid.Column="1"
                   x:Name="personJob" 
-                  IsEditable="False">
-            <ComboBoxItem Content="Développeur"/>
-            <ComboBoxItem Content="Designer"/>
-            <ComboBoxItem Content="Chef de projet"/>
-            <ComboBoxItem Content="Analyste"/>
-            <ComboBoxItem Content="Administrateur"/>
-        </ComboBox>
+                  IsEditable="False"
+                  SelectedItem="{Binding Greeting.Job, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Jobs}"
+                  />
 
         <!-- Row 4: Status + Button -->
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
@@ -50,7 +48,7 @@
                        Margin="0,0,12,0"
                        FontStyle="Italic"
                        Foreground="Black"
-                       Text="..."/>
+                       Text="{Binding Greeting.Model, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="welcome"
                     Content="Bienvenue"
                     Width="100"
