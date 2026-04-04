@@ -13,7 +13,18 @@ namespace WpfApp1.Models
         private string _message;
         private string _name;
         private string _job;
+        private bool _isValid;
 
+
+        public bool IsValid
+        {
+            get { return _isValid; } 
+        }
+
+        private void SetIsValid()
+        {
+            _isValid = !string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Job);
+        }
         public string Name
         {
             get { return _name; }
@@ -23,6 +34,7 @@ namespace WpfApp1.Models
                 if( _name != value)
                 {
                     _name = value;
+                    SetIsValid();
                     OnPropertyChanged();
                 }
             }
@@ -35,6 +47,7 @@ namespace WpfApp1.Models
                 if(_job != value)
                 {
                     _job = value;
+                    SetIsValid();
                     OnPropertyChanged();
                 }
             }

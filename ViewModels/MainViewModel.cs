@@ -22,7 +22,7 @@ namespace WpfApp1.ViewModels
         {
             Greeting = new Models.Greeting();
             Jobs = new ObservableCollection<string>() { "Développeur", "Designer", "Chef de projet", "Analyste", "Administrateur" };
-            GreetingCommand = new RelayCommand(o => true, o => DisplayMessage());
+            GreetingCommand = new RelayCommand(o => Greeting.IsValid, o => DisplayMessage());
         }
     }
 }
